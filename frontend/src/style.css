@@ -7,15 +7,20 @@
 body { 
     font-family: 'Inter', -apple-system, sans-serif;
     background-color: #ffffff;
+    color: #1a1a1a;
 }
 
 /* 动画过渡 */
 .fade-enter-active, .fade-leave-active {
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 .fade-enter-from, .fade-leave-to {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(4px);
+}
+
+.sidebar-transition {
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .message-enter-active {
@@ -23,18 +28,33 @@ body {
 }
 .message-enter-from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(10px);
 }
 
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
 .input-blur-bg {
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(20px);
 }
 
-.agent-card-zoom:hover {
-    transform: translateY(-4px);
+.agent-card-mini:hover {
+    background-color: #f9fafb;
+    border-color: #e5e7eb;
+}
+
+/* 弹窗毛玻璃效果 */
+.modal-overlay {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+}
+
+@keyframes bounce-subtle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+.animate-bounce-subtle {
+    animation: bounce-subtle 4s infinite ease-in-out;
 }
 
